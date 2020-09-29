@@ -382,7 +382,7 @@ msgstr ""
 #: code:addons/mass_mailing/static/src/js/unsubscribe.js:0
 #: code:addons/mass_mailing/static/src/js/unsubscribe.js:0
 #, python-format
-msgid "An error occured. Please try again later or contact us."
+msgid "An error occurred. Please try again later or contact us."
 msgstr ""
 "Bir hata oluştu. Lütfen daha sonra tekrar deneyin veya bizimle iletişime "
 "geçin."

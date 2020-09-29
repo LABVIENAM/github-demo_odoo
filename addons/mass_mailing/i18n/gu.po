@@ -283,7 +283,7 @@ msgstr ""
 #: code:addons/mass_mailing/static/src/js/unsubscribe.js:174
 #: code:addons/mass_mailing/static/src/js/unsubscribe.js:179
 #, python-format
-msgid "An error occured. Please try again later or contact us."
+msgid "An error occurred. Please try again later or contact us."
 msgstr ""
 
 #. module: mass_mailing

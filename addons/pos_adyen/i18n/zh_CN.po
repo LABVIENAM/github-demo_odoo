@@ -62,7 +62,7 @@ msgstr "Adyen测试模式"
 #. openerp-web
 #: code:addons/pos_adyen/static/src/js/payment_adyen.js:0
 #, python-format
-msgid "An unexpected error occured. Message from Adyen: %s"
+msgid "An unexpected error occurred. Message from Adyen: %s"
 msgstr "发生意外错误。来自Adyen的消息：%s"
 
 #. module: pos_adyen

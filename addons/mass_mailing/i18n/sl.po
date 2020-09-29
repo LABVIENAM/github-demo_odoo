@@ -354,7 +354,7 @@ msgstr ""
 #: code:addons/mass_mailing/static/src/js/unsubscribe.js:0
 #: code:addons/mass_mailing/static/src/js/unsubscribe.js:0
 #, python-format
-msgid "An error occured. Please try again later or contact us."
+msgid "An error occurred. Please try again later or contact us."
 msgstr "Prišlo je do napake. Poskusite znova pozneje ali nas kontaktirajte. "
 
 #. module: mass_mailing
