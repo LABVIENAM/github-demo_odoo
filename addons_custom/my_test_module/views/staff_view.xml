@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record id="Staff_tree_view" model="ir.ui.view">
+            <field name="name">Staff tree view</field>
+            <field name="model">staff</field>
+            <field name="arch" type="xml">
+                <tree string="staff">
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="gender"/>
+                    <field name="phone"/>
+                    <field name="address"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="staff_form_view" model="ir.ui.view">
+            <field name="name">Staff</field>
+            <field name="model">staff</field>
+            <field name="arch" type="xml">
+                <form string="staff">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="age"/>
+                            <field name="phone"/>
+                            <field name="gender"/>
+                            <field name="address"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="staff_action" model="ir.actions.act_window">
+            <field name="name">Staff</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">staff</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="staff_menu_parent" name ="Staff" sequence="2"/>
+        <menuitem id="staff_menu_child" name="Staff" parent="staff_menu_parent"
+                  action="staff_action" sequence="1"/>
+    </data>
+
+</odoo>

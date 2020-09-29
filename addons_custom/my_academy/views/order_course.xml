@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record id="order_course_tree_view" model="ir.ui.view">
+            <field name="name">Order Course Tree View</field>
+            <field name="model">order.course</field>
+            <field name="arch" type="xml">
+                <tree string="Order Course">
+                    <field name="student_id"/>
+                    <field name="order_date"/>
+                    <field name="total_fee"/>
+                    <field name="state_register"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="order_form_view" model="ir.ui.view">
+            <field name="name">Order Course Form View</field>
+            <field name="model">order.course</field>
+            <field name="arch" type="xml">
+                <form string="Order">
+                    <header>
+                        <button name="validate_register" string="Validate Register" type="object"/>
+                         <button name="back_register" string="Back Register" type="object"/>
+                        <field name="state_register" widget="statusbar" statusbar_visible="draft,registed"
+                               nolabel="1" readonly="1"/>
+
+
+<!--                        <field name="state_register" widget="statusbar" statusbar_visible="draft,registed"-->
+<!--                               nolabel="1" readonly="1"/>-->
+                    </header>
+                    <sheet>
+                        <group>
+                            <h2>Student Course Register Form</h2>
+                            <field name="student_id"/>
+                            <field name="total_fee"/>
+                        </group>
+                        <notebook>
+                            <page string="Oder Course">
+                                <field name="course_line_ids">
+                                    <tree editable="bottom">
+                                        <field name="course_id"/>
+                                        <field name="quantity"/>
+                                        <field name="fee_course"/>
+                                        <field name="sub_total_fee" force_save="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <!--                            <page string="Note">-->
+                            <!--                                <field name="note"/>-->
+                            <!--                            </page>-->
+                        </notebook>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="order_action" model="ir.actions.act_window">
+            <field name="name">Order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">order.course</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="order_menu_child" name="Order Course" sequence="2"
+                  action="order_action" parent="My_Academy_Parent"/>
+    </data>
+</odoo>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="session_tree_view" model="ir.ui.view">
+            <field name="name">Session Tree View</field>
+            <field name="model">session</field>
+            <field name="arch" type="xml">
+                <tree string="Session">
+                    <!--                    <field name="name"/>-->
+                    <!--                    <field name="start_date"/>-->
+                    <!--                    <field name="total_seat"/>-->
+                    <!--                    <field name="duration"/>-->
+                    <!--                    <group>-->
+                    <!--                    <label for="student_ids"/>-->
+                    <field name="student_ids"/>
+                    <field name="course_regis"/>
+                    <!--                        <field name="total_fee"/>-->
+                    <!--                    </group>-->
+                    <!--                    <notebook>-->
+                    <!--                        <page string="Course Description">-->
+                    <!--&lt;!&ndash;                        <field name="course_line_ids">&ndash;&gt;-->
+                    <!--                            <tree editable="bottom">-->
+                    <!--                                <field name="name"/>-->
+                    <!--                                <field name="start_date"/>-->
+                    <!--                                <field name="total_seat"/>-->
+                    <!--                                <field name="duration"/>-->
+                    <!--                            </tree>-->
+                    <!--&lt;!&ndash;                        </field>&ndash;&gt;-->
+                    <!--                        </page>-->
+                    <!--                        <page string="Other Note">-->
+                    <!--                            <field name="note"/>-->
+                    <!--                        </page>-->
+                    <!--                    </notebook>-->
+                </tree>
+
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="session_kanban_view">
+            <field name="name">Session Kanban View</field>
+            <field name="model">session</field>
+            <field name="arch" type="xml">
+                <kanban editable="bottom">
+
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div
+                                    t-attf-class="oe_kanban_color_{{kanban_getcolor(record.color.raw_value)}}
+                                                  oe_kanban_global_click_edit oe_semantic_html_override
+                                                  oe_kanban_card {{record.group_fancy==1 ? 'oe_kanban_card_fancy' : ''}}">
+                                <div class="oe_dropdown_kanban">
+                                    <!-- dropdown menu -->
+                                    <div class="oe_dropdown_toggle">
+                                        <i class="fa fa-bars fa-lg" title="Manage" aria-label="Manage"/>
+                                        <ul class="oe_dropdown_menu">
+                                            <li>
+                                                <a type="delete">Delete</a>
+                                            </li>
+                                            <li>
+                                                <ul class="oe_kanban_colorpicker"
+                                                    data-field="color"/>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="oe_clear"></div>
+                                </div>
+                                <div t-attf-class="oe_kanban_content">
+                                    <!-- title -->
+                                    Session name:
+                                    <field name="name"/>
+                                    <br/>
+                                    Start date:
+                                    <field name="start_date"/>
+                                    <br/>
+                                    Duration:
+                                    <field name="duration"/>
+                                    days
+                                    <br/>
+                                    Total seat:
+                                    <field name="total_seat"/>
+                                    <br/>
+                                    Course regis:
+                                    <field name="course_regis"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <record id="session_form_view" model="ir.ui.view">
+            <field name="name">Session</field>
+            <field name="model">session</field>
+            <field name="arch" type="xml">
+                <form string="Session">
+                    <header>
+                        <!--                        <button name="validate_register" string="Validate Register" type="object"/>-->
+                        <!--                        <field name="state_register" widget="statusbar" statusbar_visible="draft,registed"-->
+                        <!--                               nolabel="1" readonly="1"/>-->
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="start_date"/>
+                            <field name="total_seat"/>
+                            <field name="duration"/>
+                            <field name="course_regis"/>
+                            <field name="student_ids"/>
+<!--                            <field name="student_ids" widget="many2many_tags"/>-->
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="session_action" model="ir.actions.act_window">
+            <field name="name">Session</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">session</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+        <menuitem id="session_menu" name="Session" sequence="0"
+                  action="session_action" parent="My_Academy_Parent"/>
+    </data>
+</odoo>

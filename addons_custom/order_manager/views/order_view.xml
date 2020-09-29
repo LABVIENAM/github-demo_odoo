@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="order_tree_view" model="ir.ui.view">
+            <field name="name">Order Tree View</field>
+            <field name="model">orders</field>
+            <field name="arch" type="xml">
+                <tree string="Order">
+                    <field name="name"/>
+                    <field name="customer_id"/>
+                    <field name="order_date"/>
+                    <field name="total_amount" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="order_form_view" model="ir.ui.view">
+            <field name="name">Order</field>
+            <field name="model">orders</field>
+            <field name="arch" type="xml">
+                <form string="Orders">
+                    <header>
+                        <button name="validate_order" string="Validate Order" type="object"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,paid" nolabel="1" readonly="1" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="customer_id" required="1"/>
+                            <field name="order_date" readonly="1"/>
+                            <field name="total_amount" readonly="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Order Lines">
+                                <field name="line_ids">
+                                    <tree editable="bottom">
+                                        <field name="product_id"/>
+                                        <field name="qty"/>
+                                        <field name="amount"/>
+                                        <field name="sub_total" force_save="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Others">
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="order_action" model="ir.actions.act_window">
+            <field name="name">Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">orders</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="order_menu_parent" name="Orders" sequence="2"/>
+
+        <menuitem id="order_menu_child" name="Order Child" parent="order_menu_parent"
+                  action="order_action" sequence="1"/>
+    </data>
+</odoo>

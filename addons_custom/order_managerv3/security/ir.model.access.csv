@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_customer_employee,access.customer.employee,order_managerv3.model_customer,base.group_user,1,1,1,1
+access_orders_employee,access.orders.employee,order_managerv3.model_orders,base.group_user,1,1,1,1
+access_order_line_employee,access.order.line.employee,order_managerv3.model_order_line,base.group_user,1,1,1,1
+access_order_line_employee,access.order.line.employee,order_managerv3.model_products,base.group_user,1,1,1,1

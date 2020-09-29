@@ -1,0 +1,4 @@
+#. module: my_academy
+#: model:ir.model.fields,field_description:my_academy.field_student__phone
+msgid "Phone"
+msgstr "SĐT"

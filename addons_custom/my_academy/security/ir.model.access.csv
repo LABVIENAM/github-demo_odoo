@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+student_manager,student_manager,model_student,group_manager,1,1,1,1
+course_manager,course_manager,model_course,group_manager,1,1,1,1
+session_manager,session_manager,model_session,group_manager,1,1,1,1
+order_course_manager,order_course_manager,model_order_course,group_manager,1,1,1,1
+order_course_line_manager,order_course_line_manager,model_order_course_line,group_manager,1,1,1,1
+
+course_read_all,course_all,model_course,group_student,1,0,0,0
+session_read_all,session_all,model_session,group_student,1,0,0,0
+student_read_all,student_all,model_student,group_student,1,0,0,0
+order_course_read_all,order_course_all,model_order_course,group_student,1,0,0,0
+order_course_line_read_all,order_course_all,model_order_course_line,group_student,1,0,0,0
