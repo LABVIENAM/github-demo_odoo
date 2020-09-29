@@ -33,12 +33,12 @@ odoo.define('mass_mailing.unsubscribe', function (require) {
                         toggle_opt_out_section(true);
                     }
                     else {
-                        $('#subscription_info').html(_t('An error occured. Please try again later or contact us.'));
+                        $('#subscription_info').html(_t('An error occurred. Please try again later or contact us.'));
                         $('#info_state').removeClass('alert-success').removeClass('alert-info').removeClass('alert-warning').addClass('alert-error');
                     }
                 })
                 .guardedCatch(function () {
-                    $('#subscription_info').html(_t('An error occured. Please try again later or contact us.'));
+                    $('#subscription_info').html(_t('An error occurred. Please try again later or contact us.'));
                     $('#info_state').removeClass('alert-success').removeClass('alert-info').removeClass('alert-warning').addClass('alert-error');
                 });
         }
@@ -113,7 +113,7 @@ odoo.define('mass_mailing.unsubscribe', function (require) {
                         toggle_opt_out_section(false);
                     }
                     else {
-                        $('#subscription_info').html(_t('An error occured. Please try again later or contact us.'));
+                        $('#subscription_info').html(_t('An error occurred. Please try again later or contact us.'));
                         $('#info_state').removeClass('alert-success').removeClass('alert-info').removeClass('alert-warning').addClass('alert-error');
                     }
                     $('#button_add_blacklist').hide();
@@ -122,7 +122,7 @@ odoo.define('mass_mailing.unsubscribe', function (require) {
                 }
             })
             .guardedCatch(function () {
-                $('#subscription_info').html(_t('An error occured. Please try again later or contact us.'));
+                $('#subscription_info').html(_t('An error occurred. Please try again later or contact us.'));
                 $('#info_state').removeClass('alert-success').removeClass('alert-info').removeClass('alert-warning').addClass('alert-error');
             });
     });
@@ -145,7 +145,7 @@ odoo.define('mass_mailing.unsubscribe', function (require) {
                         toggle_opt_out_section(true);
                     }
                     else {
-                        $('#subscription_info').html(_t('An error occured. Please try again later or contact us.'));
+                        $('#subscription_info').html(_t('An error occurred. Please try again later or contact us.'));
                         $('#info_state').removeClass('alert-success').removeClass('alert-info').removeClass('alert-warning').addClass('alert-error');
                     }
                     $('#button_add_blacklist').show();
@@ -154,7 +154,7 @@ odoo.define('mass_mailing.unsubscribe', function (require) {
                 }
             })
             .guardedCatch(function () {
-                $('#subscription_info').html(_t('An error occured. Please try again later or contact us.'));
+                $('#subscription_info').html(_t('An error occurred. Please try again later or contact us.'));
                 $('#info_state').removeClass('alert-success').removeClass('alert-info').removeClass('alert-warning').addClass('alert-error');
             });
     });
@@ -177,12 +177,12 @@ odoo.define('mass_mailing.unsubscribe', function (require) {
                     $("#div_feedback").hide();
                 }
                 else {
-                    $('#subscription_info').html(_t('An error occured. Please try again later or contact us.'));
+                    $('#subscription_info').html(_t('An error occurred. Please try again later or contact us.'));
                     $('#info_state').removeClass('alert-success').removeClass('alert-info').removeClass('alert-error').addClass('alert-warning');
                 }
             })
             .guardedCatch(function () {
-                $('#subscription_info').html(_t('An error occured. Please try again later or contact us.'));
+                $('#subscription_info').html(_t('An error occurred. Please try again later or contact us.'));
                 $('#info_state').removeClass('alert-info').removeClass('alert-success').removeClass('alert-error').addClass('alert-warning');
             });
     });

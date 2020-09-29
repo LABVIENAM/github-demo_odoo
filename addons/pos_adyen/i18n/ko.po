@@ -60,7 +60,7 @@ msgstr "Adyen 테스트 모드"
 #. openerp-web
 #: code:addons/pos_adyen/static/src/js/payment_adyen.js:0
 #, python-format
-msgid "An unexpected error occured. Message from Adyen: %s"
+msgid "An unexpected error occurred. Message from Adyen: %s"
 msgstr "예기치 않은 오류가 발생했습니다. Adyen의 메시지 : %s"
 
 #. module: pos_adyen

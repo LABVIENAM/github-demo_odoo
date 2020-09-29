@@ -56,7 +56,7 @@ msgstr ""
 #. openerp-web
 #: code:addons/pos_adyen/static/src/js/payment_adyen.js:0
 #, python-format
-msgid "An unexpected error occured. Message from Adyen: %s"
+msgid "An unexpected error occurred. Message from Adyen: %s"
 msgstr ""
 
 #. module: pos_adyen
